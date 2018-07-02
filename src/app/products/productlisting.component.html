@@ -1,0 +1,57 @@
+<div align="right">
+	<div><a href="javascript:void(0)" id="cart_link" (click)="toggleCartPanel()" *ngIf="totalCartItem > 0"><strong>Cart {{totalCartItem}}</strong></a></div>
+	<div class="cart_details" *ngIf="cartPanel" [@slideInOut]>
+		 Following items in your cart:
+		 <ul>
+			<li *ngFor="let cart of cartItem">
+				 <strong>{{cart.id}} </strong> in your cart
+			</li>
+		 </ul>
+	</div>
+</div>
+
+<div>
+	<form>
+	<strong class="search-lbl">Search:</strong>
+	<input type="text" name="txtSearchBox" class="txtbx" placeholder="Search your text here..." />
+	</form>
+</div>
+<hr>
+<div class = "container">
+   <h2>Product Listing</h2>
+   <table width="100%">
+   <tr>
+	<th align="left">
+	Product id
+	</th>
+	<th align="left">
+	Product description
+	</th>
+	<th align="left">
+	Product display name
+	</th>
+	<th>
+		Action Items
+	</th>
+   </tr>
+   
+   <tr *ngFor="let row of prodList; let i = index">
+	<td>
+	{{row.id}}
+	</td>
+	<td>
+	  {{row.description}} 
+	</td>
+	<td>
+	{{row.full_name}}
+	</td>
+	<td>
+		<!--<button (click) ="viewDetails(row)" >Add to cart</button> (click)="addCart(row)"-->
+		<!--<add-cart (handleClickedEvent)="saveData($event)"></add-cart>-->
+		<add-cart [recordDetail]="row" [totalCart]="cartItem" (handleClickedEvent)="saveData($event)"></add-cart>
+	</td>
+   </tr>
+   </table>
+   
+ 
+</div>

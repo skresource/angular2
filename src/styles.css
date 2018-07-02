@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+	font-size:14px;
+	border:1px solid #f5f5f5;
+	font-family:arial;
+}
+
+.cart_details{
+	border: 1px solid #ccc;
+    width: 215px;
+    border-radius: 7px;
+    background: #f5f5f5;
+    display: inline-block;
+    float: right;
+    margin-top: 2px;
+    padding: 20px;
+    margin-right: 0;
+    text-align: left;
+	line-height:21px;
+	
+}
+
+.cart_details::after{
+	clear:both;
+	content: " ";
+	display:block;
+	visibility:hidden;
+}
+
+.txtbx{
+	border:1px solid #ccc;
+	width:300px;
+	padding:10px;
+	border-radius:5px;
+}
+
+.search-lbl{
+	font-size:18px;
+	padding:8px;
+	margin:10px 8px;
+	color:RoyalBlue;
+}
